@@ -29,6 +29,10 @@ jobs:
           make check-scripts
           make test
 
+      - name: Make mod
+        run: |
+          make
+
       - name: List files
         run: |
           find .
