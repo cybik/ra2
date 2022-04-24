@@ -36,3 +36,8 @@ jobs:
       - name: List files
         run: |
           find .
+          
+      - uses: actions/upload-artifact@v3
+        with:
+          name: output
+          path: OpenRA.Mods.RA2/obj
