@@ -29,23 +29,6 @@ jobs:
           make check-scripts
           make test
 
-  windows:
-    name: Windows (Framework 4.7)
-    runs-on: windows-2019
-
-    steps:
-      - name: Clone Repository
-        uses: actions/checkout@v2
-
-      - name: Check Code
-        shell: powershell
+      - name: List files
         run: |
-          dotnet nuget locals all --clear
-          .\make.ps1 check
-
-      - name: Check Mods
-        run: |
-          chocolatey install lua --version 5.1.5.52
-          $ENV:Path = $ENV:Path + ";C:\Program Files (x86)\Lua\5.1\"
-          .\make.ps1 check-scripts
-          .\make.ps1 test
+          find .
